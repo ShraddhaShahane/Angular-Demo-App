@@ -1,2 +1,39 @@
 <p>login works!</p>
 
+
+<div>
+    <form class="example-form" [formGroup]="loginForm">
+
+        <div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Username</mat-label>
+                <input type="text" matInput formControlName="username" placeholder="Ex. pat@example.com">
+                <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                  <mat-error>Please enter a valid email address</mat-error>
+                }
+                @if (emailFormControl.hasError('required')) {
+                  <mat-error>Email is <strong>required</strong></mat-error>
+                } -->
+              </mat-form-field>
+
+        </div>
+
+        <div>
+            
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Ex. pat@example.com">
+            <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+              <mat-error>Please enter a valid email address</mat-error>
+            }
+            @if (emailFormControl.hasError('required')) {
+              <mat-error>Email is <strong>required</strong></mat-error>
+            } -->
+          </mat-form-field>
+
+        </div>       
+
+          <button mat-raised-button [disabled]="!loginForm.valid" (click)="onSubmit()">Submit</button>
+      </form>
+    
+</div>

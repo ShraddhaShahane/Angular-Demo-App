@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
 
     MatInputModule,
     MatFormFieldModule,

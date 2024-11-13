@@ -258,7 +258,7 @@ export class HomeComponent implements OnInit {
   ];
   displayedColumns = this.columns.map(c => c.columnDef);
   nestedColumn = ['nested'];
-  groupByColumns = ['brand', 'color'];
+  groupByColumns: string[] = ['color', 'brand'];
 
   constructor(){
     this.dataSource = this.groupByAll(this.dataSource, 0, this.groupByColumns); 
@@ -270,7 +270,7 @@ export class HomeComponent implements OnInit {
   }
 
   groupByAll(arr: any[], level: number, groupByColumns: string[]): any[]{
-    if(level > groupByColumns.length){
+    if(groupByColumns.length === 0){
         return arr;
     }
     let property = groupByColumns[0];  

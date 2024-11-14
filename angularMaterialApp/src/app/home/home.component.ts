@@ -1,3 +1,4 @@
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 
 const rowData = [
@@ -257,16 +258,42 @@ export class HomeComponent implements OnInit {
     },
   ];
   displayedColumns = this.columns.map(c => c.columnDef);
+  allColumns: string[] = this.columns.map(c => c.columnDef);
   nestedColumn = ['nested'];
   groupByColumns: string[] = ['color', 'brand'];
 
   constructor(){
-    this.dataSource = this.groupByAll(this.dataSource, 0, this.groupByColumns); 
-    this.displayedColumns = this.displayedColumns.filter((dCol) => !this.groupByColumns.includes(dCol));
-
+    // this.dataSource = this.groupByAll(this.dataSource, 0, this.groupByColumns); 
+    // this.displayedColumns = this.displayedColumns.filter((dCol) => !this.groupByColumns.includes(dCol));
+     this.reArrangeTable();
   }
 
   ngOnInit() {
+  }
+
+  reArrangeTable(){
+    this.dataSource = this.groupByAll(rowData, 0, this.groupByColumns); 
+    this.displayedColumns = this.allColumns.filter((dCol) => !this.groupByColumns.includes(dCol));
+
+  }
+
+  onDrop(event: any) {
+    console.log(event);
+    let droppedColumn = event.item.element.nativeElement.innerText.toLowerCase();
+   
+    if (!this.groupByColumns.includes(droppedColumn)) {
+      this.groupByColumns.push(droppedColumn);
+      this.reArrangeTable();
+    }
+  }
+
+
+  removeColumn(column: string) {
+    const index = this.groupByColumns.indexOf(column);
+    if (index >= 0) {
+      this.groupByColumns.splice(index, 1);
+      this.reArrangeTable();
+    }
   }
 
   groupByAll(arr: any[], level: number, groupByColumns: string[]): any[]{

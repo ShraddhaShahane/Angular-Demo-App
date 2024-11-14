@@ -1,5 +1,6 @@
-import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray , CdkDragPlaceholder} from '@angular/cdk/drag-drop';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatTable, MatTableModule} from '@angular/material/table';
 
 const rowData = [
   {
@@ -262,6 +263,8 @@ export class HomeComponent implements OnInit {
   nestedColumn = ['nested'];
   groupByColumns: string[] = ['color', 'brand'];
 
+  @ViewChild('table', {static: true}) table!: MatTable<any>;
+
   constructor(){
     // this.dataSource = this.groupByAll(this.dataSource, 0, this.groupByColumns); 
     // this.displayedColumns = this.displayedColumns.filter((dCol) => !this.groupByColumns.includes(dCol));
@@ -278,13 +281,21 @@ export class HomeComponent implements OnInit {
   }
 
   onDrop(event: any) {
-    console.log(event);
-    let droppedColumn = event.item.element.nativeElement.innerText.toLowerCase();
+    console.log('div', event);
+    // let droppedColumn = event.item.element.nativeElement.innerText.toLowerCase();
+    let droppedColumn = event.item.data;
    
     if (!this.groupByColumns.includes(droppedColumn)) {
       this.groupByColumns.push(droppedColumn);
       this.reArrangeTable();
     }
+  }
+
+  onDropRow(event: any){
+    console.log('on row drop', event);
+    const previousIndex = this.dataSource.findIndex(d => d === event.item.data);
+    moveItemInArray(this.dataSource, previousIndex, event.currentIndex);
+    this.table.renderRows();
   }
 
 
@@ -319,3 +330,5 @@ export class HomeComponent implements OnInit {
   }
  
 }
+
+

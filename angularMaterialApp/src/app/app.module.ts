@@ -7,23 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatChipsModule } from '@angular/material/chips';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { HomeComponent } from './home/home.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,
@@ -31,22 +23,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
-
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatExpansionModule,
-    
-
-    MatCheckboxModule,
-    MatChipsModule,
-    DragDropModule,
-  
+    RouterModule,    
+    MaterialModule,  
   ],
+  exports: [MaterialModule],
   providers: [
     provideAnimationsAsync('noop')
   ],

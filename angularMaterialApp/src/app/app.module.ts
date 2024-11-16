@@ -22,6 +22,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { InnerTableComponent } from './inner-table/inner-table.component';
+import { TestPipe } from './test.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InnerTableComponent } from './inner-table/inner-table.component';
     LoginComponent,
     HomeComponent,
     NestedTableComponent,
-    InnerTableComponent
+    InnerTableComponent,
+    TestPipe
   ],
   imports: [
     CommonModule,

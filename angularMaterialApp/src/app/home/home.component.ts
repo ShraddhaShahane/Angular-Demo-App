@@ -261,7 +261,7 @@ export class HomeComponent implements OnInit {
   displayedColumns = this.columns.map(c => c.columnDef);
   allColumns: string[] = this.columns.map(c => c.columnDef);
   nestedColumn = ['nested'];
-  groupByColumns: string[] = ['color', 'brand'];
+  groupByColumns: string[] = [];
 
   @ViewChild('table', {static: true}) table!: MatTable<any>;
 

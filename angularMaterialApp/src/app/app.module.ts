@@ -15,6 +15,8 @@ import { CustomIfDirective } from './directives/custom-if.directive';
 import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CustomAttributeStyleDirective } from './directives/custom-attribute-style.directive';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CustomAttributeStyleDirective } from './directives/custom-attribute-sty
     CustomIfDirective,    
     DirectiveDemoComponent,
     PageNotFoundComponent,
-    CustomAttributeStyleDirective
+    CustomAttributeStyleDirective,
+    ShortenPipe,
+    PipeDemoComponent
   ],
   imports: [
     CommonModule,

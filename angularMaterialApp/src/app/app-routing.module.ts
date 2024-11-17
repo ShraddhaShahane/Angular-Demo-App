@@ -5,6 +5,7 @@ import { MasterContainerComponent } from './master-container/master-container.co
 import { HomeComponent } from './home/home.component';
 import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 
 const routes: Routes = [
   {
@@ -28,8 +29,11 @@ const routes: Routes = [
       },
       {
         path:'directive',        
-        component: DirectiveDemoComponent,
-      
+        component: DirectiveDemoComponent     
+      },
+      {
+        path:'pipes',        
+        component: PipeDemoComponent     
       }
     ]
   },

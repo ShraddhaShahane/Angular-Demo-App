@@ -21,6 +21,12 @@ export class MasterContainerComponent {
       link: 'directive',
       icon: '',
       isActive: true
+    },
+    {
+      title: 'Pipes',
+      link: 'pipes',
+      icon: '',
+      isActive: true
     }
   ];
   constructor(private route: ActivatedRoute, private router: Router){

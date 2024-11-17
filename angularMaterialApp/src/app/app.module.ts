@@ -10,12 +10,22 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
+import { MasterContainerComponent } from './master-container/master-container.component';
+import { CustomIfDirective } from './directives/custom-if.directive';
+import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CustomAttributeStyleDirective } from './directives/custom-attribute-style.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    MasterContainerComponent,
+    CustomIfDirective,    
+    DirectiveDemoComponent,
+    PageNotFoundComponent,
+    CustomAttributeStyleDirective
   ],
   imports: [
     CommonModule,

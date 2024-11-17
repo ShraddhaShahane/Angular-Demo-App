@@ -1,0 +1,35 @@
+<div class="container">
+    <mat-toolbar class="header" color="primary">
+        <span>My Application</span>
+      </mat-toolbar>
+        <mat-drawer-container class="example-container" autosize>
+            <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+              <p>Auto-resizing sidenav</p>
+              @if (showFiller) {
+              <p>Lorem, ipsum dolor sit amet consectetur.</p>
+              }
+              <button (click)="showFiller = !showFiller" mat-raised-button>
+                Toggle extra text
+              </button>
+
+              <mat-nav-list>
+                @for (link of links; track link) {
+                  <mat-list-item [activated]="link.isActive">                    
+                     <button mat-icon-button (click)="goto(link.link)" matListItemMeta>
+                        <mat-icon>info</mat-icon>
+                     </button>
+                     <a matListItemTitle  [routerLink]="link.link">{{ link.title }}</a>
+                  </mat-list-item>
+                }
+              </mat-nav-list>
+          
+              
+            </mat-drawer>
+            <div class="example-sidenav-content">
+                <router-outlet></router-outlet>
+            </div>           
+          </mat-drawer-container>
+      <div class="footer" >
+        Your sticky footer with a variable height.
+      </div>
+</div>

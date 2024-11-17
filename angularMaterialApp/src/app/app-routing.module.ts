@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { MasterContainerComponent } from './master-container/master-container.component';
 import { HomeComponent } from './home/home.component';
+import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -15,9 +18,23 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    pathMatch: 'full'
+    path: 'dashboard',
+    component: MasterContainerComponent,
+    children: [
+      {
+        path:'home',        
+        component: HomeComponent,
+
+      },
+      {
+        path:'directive',        
+        component: DirectiveDemoComponent,
+      
+      }
+    ]
+  },
+  {
+    path: '**', component: PageNotFoundComponent
   },
 ];
 

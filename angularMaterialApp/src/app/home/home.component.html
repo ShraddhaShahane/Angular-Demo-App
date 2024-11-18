@@ -1,4 +1,22 @@
 
+<div class="container">
+    <div class="child">Add Item : 
+        <app-new-item (addItem)="onAddItem($event)"></app-new-item>
+    </div>
 
 
-<div>home</div>
+<hr>
+
+<div>
+    List :
+    <hr>
+    <div *ngFor="let eachItem of items" class="child">
+        <app-item [item]="eachItem" (remove)="removeItem($event)"></app-item>
+        <hr>
+    </div>
+</div>
+
+
+</div>
+
+

@@ -6,6 +6,26 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  items: any[] = [
+    {
+      name: 'A',
+      description:'This is A'
+    },
+    {
+      name: 'B',
+      description:'This is B'
+    }
+  ];
+
+  removeItem(item: any){
+    console.log(item);
+    this.items = this.items.filter((eachItem) => JSON.stringify(eachItem) !== JSON.stringify(item) )
+  }
+
+  onAddItem(item: any){
+    this.items.push(item);
+
+  }
  
 
 }

@@ -17,6 +17,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CustomAttributeStyleDirective } from './directives/custom-attribute-style.directive';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { NewItemComponent } from './new-item/new-item.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
     PageNotFoundComponent,
     CustomAttributeStyleDirective,
     ShortenPipe,
-    PipeDemoComponent
+    PipeDemoComponent,
+    NewItemComponent,
+    ItemComponent
   ],
   imports: [
     CommonModule,

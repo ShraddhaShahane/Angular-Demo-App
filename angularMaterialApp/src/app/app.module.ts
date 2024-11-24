@@ -19,6 +19,7 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { ItemComponent } from './item/item.component';
+import { DataServiceService } from './services/data-service.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ItemComponent } from './item/item.component';
   ],
   exports: [MaterialModule],
   providers: [
-    provideAnimationsAsync('noop')
+    provideAnimationsAsync('noop'),
+    DataServiceService
   ],
   bootstrap: [AppComponent]
 })
